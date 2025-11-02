@@ -1,0 +1,11 @@
+body {
+      background-color: #6386a9;
+    }
+    .atm-card {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: rgb(235, 228, 177);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }

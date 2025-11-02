@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank Account</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/work.js"></script>
+  </head>
+  <body>
+    <!-- Welcome Page -->
+    <div id="welcomePage" class="atm-card text-center">
+      <span style="font-size: 6em">🏦</span>
+      <h2>Welcome to Famous Bank</h2>
+      <p>Please choose an option</p>
+      <button
+        class="btn btn-primary w-100 mb-2 p-3"
+        onclick="showPage('loginPage')"
+      >
+        Login
+      </button>
+      <button
+        class="btn btn-success w-100 p-3"
+        onclick="showPage('createAccountPage')"
+      >
+        Create Account
+      </button>
+    </div>
+
+    <!-- Login Page -->
+    <div id="loginPage" class="atm-card text-center">
+      <span style="font-size: 4em">🔐</span>
+      <h4>LOGIN</h4>
+      <div class="mb-3 " style="text-align: left;">
+        <label for="loginUsername" class="form-label">Username</label>
+        <input
+          type="text"
+          id="loginUsername"
+          class="form-control"
+          placeholder="Enter username"
+        />
+      </div>
+      <div class="mb-3" style="text-align: left;">
+        <label for="loginPin" class="form-label">PIN</label>
+        <input
+          type="password"
+          id="loginPin"
+          class="form-control"
+          placeholder="Enter PIN"
+        />
+      </div>
+      <button class="btn btn-primary w-100 mb-2" onclick="login()">Login</button>
+      <button class="btn btn-danger w-100" onclick="showPage('welcomePage')">
+        Back
+      </button>
+    </div>
+
+    <!-- Create account Page -->
+    <div id="createAccountPage" class="atm-card" style="display:none;">
+    <h4>🧾 Create Account</h4>
+    <div class="mb-3">
+      <label for="newUsername" class="form-label">Username</label>
+      <input type="text" id="newUsername" class="form-control" placeholder="Enter username">
+    </div>
+    <div class="mb-3">
+      <label for="newPin" class="form-label">PIN</label>
+      <input type="password" id="newPin" class="form-control" placeholder="Enter PIN">
+    </div>
+    <button class="btn btn-success w-100 mb-2" onclick="createAccount()">Create</button>
+    <button class="btn btn-danger w-100" onclick="showPage('welcomePage')">Back</button>
+  </div>
+
+  <!-- Deposit Page -->
+  <div id="depositPage" class="atm-card">
+    <h4>💰 Deposit</h4>
+    <div class="mb-3">
+      <label for="depositAmount" class="form-label">Amount</label>
+      <input type="number" id="depositAmount" class="form-control" placeholder="Enter amount">
+    </div>
+    <button class="btn btn-success w-100" onclick="deposit()">Deposit</button>
+    <button class="btn btn-danger w-100 mt-2" onclick="showPage('homePage')">Back</button>
+  </div>
+
+
+   <!-- Withdraw Page -->
+  <div id="withdrawPage" class="atm-card">
+    <h4>💸 Withdraw</h4>
+    <div class="mb-3">
+      <label for="withdrawAmount" class="form-label">Amount</label>
+      <input type="number" id="withdrawAmount" class="form-control" placeholder="Enter amount">
+    </div>
+    <button class="btn btn-primary w-100" onclick="withdraw()">Withdraw</button>
+    <button class="btn btn-danger w-100 mt-2" onclick="showPage('homePage')">Back</button>
+  </div>
+
+  <!-- Update Account Page -->
+  <div id="updateAccountPage" class="atm-card" style="display:none;">
+    <h4>✏️ Update Account</h4>
+    <div class="mb-3">
+      <label for="updatePin" class="form-label">New PIN</label>
+      <input type="password" id="updatePin" class="form-control" placeholder="Enter new PIN">
+    </div>
+    <button class="btn btn-warning w-100" onclick="updateAccount()">Update</button>
+    <button class="btn btn-danger w-100" onclick="showPage('homePage')">Back</button>
+  </div>
+
+
+  <!-- Home Page -->
+<div id="homePage" class="container mt-4 atm-card">
+  <h2>🏠 Home</h2>
+  <p>Welcome, <span id="userDisplay"></span></p>
+
+  <div class="row row-cols-2">
+    <div class="col bg-success"><button class="btn btn-light w-100 mb-3 mt-3" onclick="showPage('depositPage')">Deposit</button></div>
+    <div class="col bg-success"><button class="btn btn-light w-100 mb-3 mt-3" onclick="showPage('withdrawPage')">Withdraw</button></div>
+    <div class="col bg-success"><button class="btn btn-light w-100 mb-3" onclick="showBalance()">Check Balance</button></div>
+    <div class="col bg-success"><button class="btn btn-light w-100 mb-3" onclick="showPage('updateAccountPage')">Update Account</button></div>
+    <button class="btn btn-danger w-100 mt-3" onclick="logout()">Logout</button>
+  </div>
+
+ 
+
+  </body>
+</html>
